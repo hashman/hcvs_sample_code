@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $rs = $db->query("SELECT * FROM users where account = '{$account}'");
     $row = $rs->fetch();
 
-    if (isset($row)) {
+    if ($row) {
         echo "<span>新增成功。</span>";
     } else {
         echo "<span>新增失敗。</span>";
