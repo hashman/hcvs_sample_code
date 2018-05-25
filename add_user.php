@@ -1,6 +1,6 @@
 <html>
 <body>
-<h2>表單資料：</h2>
+<h2>新增帳號</h2>
 <form action="" method="POST">
     <input type="text" name="account" value="" placeholder="帳號" required>
     <input type="password" name="password" value="" placeholder="密碼" required>
