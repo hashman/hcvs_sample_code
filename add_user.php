@@ -13,12 +13,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $account = $_POST['account'];
     $password = $_POST['password'];
+    $insert = $db->query("INSERT INTO users (account, password) VALUES ('{$account}', {$password});");
+    $insert->execute();
+
     $rs = $db->query("SELECT * FROM users where account = '{$account}'");
     $row = $rs->fetch();
-    if (isset($row) && $row['password'] === $password) {
-        echo "<span>登入成功。</span>";
+
+    if (isset($row)) {
+        echo "<span>新增成功。</span>";
     } else {
-        echo "<span>帳號或密碼錯誤。</span>";
+        echo "<span>新增失敗。</span>";
     }
 }
 ?>
